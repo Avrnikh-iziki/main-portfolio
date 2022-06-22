@@ -1,0 +1,310 @@
+@import "../../../global.scss";
+.bg1 {
+  position: absolute;
+  top: 50;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+}
+.about {
+  background-color: rgba(21, 2, 58, 0.8);
+  color: white;
+  width: 100%;
+  height: 100%;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1 {
+    color: white;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .in {
+    padding: 3rem 18rem;
+    height: 100%;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include w7 {
+      padding: 3rem 8rem;
+    }
+    @include w6 {
+      padding: 3rem 6rem;
+    }
+    @include w4 {
+      padding: 3rem 8rem;
+    }
+    @include w5 {
+      padding: 5rem 5rem;
+    }
+    @include sc3 {
+    padding: 1rem 3rem;
+    }
+    .about-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 3.5rem;
+      padding-bottom: 5rem;
+     
+      @include sc3 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @include w4{
+        grid-template-columns: repeat(1, 1fr);
+
+      }
+
+      .right-about {
+        padding: 5px 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+       
+        @include sc3{
+          grid-template-columns: repeat(1, 1fr);
+          padding-top: 2.5rem;
+        }
+      
+        @include w4{
+          grid-template-columns: repeat(2, 1fr);
+          padding-top: 2.5rem;
+        }
+        .about-item {
+          border: 1px solid orange;
+          padding: 0;
+          border-radius: 5px;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            cursor: default;
+            transform: translateY(-5px);
+            border: 1px solid rgb(8, 235, 243);
+            box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+          }
+          .abt-text {
+            padding: 1rem .5rem;
+            display: flex;
+            flex-direction: column;
+            .large-text {
+              padding-left: .5rem;
+              font-size: 3rem;
+              font-weight: 700;
+              color: rgb(8, 235, 243);
+            }
+            .small-text {
+              padding-left: 2rem;
+              position: relative;
+              text-transform: uppercase;
+              font-size: 1rem;
+              color: gray;
+              letter-spacing: 2px;
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 15px;
+                width: 1.5rem;
+                height: 2px;
+                background-color: gray;
+              }
+            }
+          }
+        }
+      }
+      .left-about {
+        @include sc3{
+          padding-right: 0;
+        }
+        padding-right: 5rem;
+        p {
+          padding: 1rem;
+          color: rgb(163, 163, 163);
+          @include sc3{
+            padding-left: 0;
+          }
+        }
+        h4 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .about-stats {
+      padding-bottom: 4rem;
+     
+      .progress-bars {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        @include sc3 {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      
+        .progress-bar {
+          display: flex;
+          flex-direction: column;
+          .prog-title {
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+          .progress-con {
+            display: flex;
+            align-items: center;
+            .prog-text {
+              padding: 0px 3px;
+              color: orange;
+            }
+            .progress {
+              width: 100%;
+              height: 0.45rem;
+              background-color: rgba(248, 165, 10, 0.3);
+              margin-left: 1rem;
+              position: relative;
+              span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: rgb(8, 235, 243);
+                transition: all 0.4s ease-in-out;
+                width: 60%;
+              }
+
+              .html {
+                width: 80%;
+              }
+              .css {
+                width: 95%;
+              }
+              .js {
+                width: 75%;
+              }
+              .react {
+                width: 60%;
+              }
+              .node {
+                width: 87%;
+              }
+              .python {
+                width: 70%;
+              }
+              .reactna {
+                width: 80%;
+              }
+              .redux {
+                width: 75%;
+              }
+              .mongodb {
+                width: 65%;
+              }
+              .tensor {
+                width: 50%;
+              }
+              .sklearn {
+                width: 60%;
+              }
+              .nural {
+                width: 50%;
+              }
+              .c{
+                width: 50%;
+              }
+              .cpp {
+                width: 30%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .stat-title {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      text-align: center;
+      padding: .5rem 0rem 1rem 0rem;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 40%;
+        height: 1px;
+        background-color: gray;
+        transform: translateX(-50%);
+      }
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+      padding-bottom: 3rem;
+      @include sc3{
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 6rem;
+      }
+      .timeline-item {
+        position: relative;
+        padding-left: 5rem;
+        margin-left: 3rem;
+        @include sc3{
+          padding-left: 5rem;
+          margin-left: 1rem;
+        }
+        .tl-icon {
+          position: absolute;
+          left: 4px;
+          top: 45px;
+          background-color: rgb(8, 235, 243);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            font-size: 1.3rem;
+          }
+        }
+        .tl-duration {
+          padding: 0.2rem 0.6rem;
+          background-color: rgb(70, 67, 60);
+          border-radius: 15px;
+          display: inline-block;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          font-weight: 500;
+          border-left: none  !important;
+          margin-left: .1rem !important;
+        }
+        h5 {
+          padding: 1rem 0;
+          text-transform: uppercase;
+          font-size: 1.3rem;
+          font-weight: 600;
+          span {
+            color: orange;
+            font-weight: 500;
+            font-size: 1.2rem;
+          }
+        }
+        p {
+          color: rgb(170, 167, 167);
+          border-left: 1px solid rgb(8, 235, 243);
+          padding-left: 4rem;
+          margin-left: -3.5rem;
+          .tl-duration {
+            border-left: none;
+            padding-left: 0rem;
+            margin-left: 0rem;
+          }
+        }
+      }
+    }
+  }
+}

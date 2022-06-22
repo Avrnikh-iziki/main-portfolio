@@ -1,0 +1,189 @@
+@import "../../../global.scss";
+.bg {
+  position: absolute;
+  background-size: cover;
+  opacity: 0.3;
+  background-position: 50% 50%;
+}
+.portfolio {
+  background-color: rgb(31, 29, 29);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .url-container {
+    height: 250px;
+    width: 100%;
+    scrollbar-width: none;
+    z-index: 1;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    h1 {
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    ul {
+      height: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      cursor: pointer;
+      z-index: 2;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .container {
+    min-height: 70%;
+    width: 65%;
+   
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    scrollbar-width: none;
+    padding: 10px 0px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include mobile {
+      height: 100%;
+    width: 75%;
+
+    }
+    .item {
+      width: 270px;
+      height: 190px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      color: white;
+      position: relative;
+      transition: all 1s ease-out;
+      border: 1px solid rgb(131, 100, 42);
+      //box-shadow: 0px 0px 10px -2px orange !important;
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      @include mobile2 {
+        height:inherit;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        @include mobile2{
+          width: 90%;
+         height: 90%;
+        z-index: 1;
+        }
+      }
+      .item-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 10;
+        background-color: rgb(8, 235, 243);
+
+        animation-name: bg;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        .hover-items {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          .title {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 18px;
+            font-weight: 700;
+          }
+          .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 2;
+            .icon {
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 1rem;
+              font-size: 1rem;
+              color: black;
+              cursor: pointer;
+              transition: all 0.4s ease-in-out;
+              &:hover {
+                color: rgb(8, 235, 243);
+                background-color: black;
+              }
+            }
+          }
+        }
+      }
+
+      @keyframes bg {
+        0% {
+          opacity: 0.1;
+          transform: scale(0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      &:hover .item-bg {
+        display: block;
+      }
+    }
+
+    .an {
+      animation-name: anima;
+      animation-duration: 1.8s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      
+    }
+    @keyframes anima {
+      0% {
+        opacity: 0.1;
+        transform: scale(0);
+      }
+      30% {
+        opacity: 0.1;
+        transform: scale(0);
+      }
+      90% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
